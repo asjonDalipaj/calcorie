@@ -1,0 +1,42 @@
+{
+  "name": "Cal-O-Matic",
+  "icon": "local_fire_department",
+  "version": "1.4.1",
+  "author": "aj",
+  "description": "A pastel pixel calorie counter with a carrot who reacts to your day. Open the card to log food, ask DeepSeek for a meal estimate, or calculate a daily budget from your body.",
+  "category": "health",
+  "main": "Calcalories.qml",
+  "defaultConfig": {
+    "placementStrategy": "free",
+    "widgetScale": 100,
+    "widgetOpacity": 100,
+    "colorMode": "auto",
+    "dim": 0,
+    "showBackground": false,
+    "backgroundOpacity": 0,
+    "borderWidth": 0,
+    "borderOpacity": 0,
+    "cornerRadius": 0,
+    "useBlur": false,
+    "x": 430,
+    "y": 140,
+    "targetKcal": 2200,
+    "profileJson": "",
+    "entriesJson": "[]",
+    "logDay": ""
+  },
+  "configKeys": {
+    "targetKcal": {
+      "type": "int",
+      "default": 2200,
+      "label": "Daily calorie target"
+    }
+  },
+  "resizableAxes": {
+    "uniform": "widgetScale"
+  },
+  "defaultSize": {
+    "width": 400,
+    "height": 260
+  }
+}
