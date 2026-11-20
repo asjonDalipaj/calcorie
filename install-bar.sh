@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Put the Cal-O-Matic chip into the installed Material (ii) bar.
+# Put the Calcorie chip into the installed Material (ii) bar.
 # This patches the installed ii plugin, because the bar's module registry is
 # built into BarContent.qml. Re-run after an iNiR update; backups are kept as
 # *.bak-calcalories next to each patched file.
@@ -103,7 +103,7 @@ editor_path.write_text(editor)
 PY
 
 if command -v inir >/dev/null 2>&1; then
-    inir calcalories bar true >/dev/null 2>&1 || true
+    inir calcorie bar true >/dev/null 2>&1 || true
 fi
 
 if [ "$RESTART" -eq 1 ]; then

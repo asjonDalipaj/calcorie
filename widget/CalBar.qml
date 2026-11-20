@@ -61,11 +61,11 @@ MouseArea {
 
     Accessible.role: Accessible.Button
     Accessible.name: root.over
-        ? Translation.tr("Cal-O-Matic, %1 calories over").arg(root.amount)
-        : Translation.tr("Cal-O-Matic, %1 calories left").arg(root.amount)
+        ? Translation.tr("Calcorie, %1 calories over").arg(root.amount)
+        : Translation.tr("Calcorie, %1 calories left").arg(root.amount)
 
     function run(action: string): void {
-        Quickshell.execDetached([Quickshell.shellPath("scripts/inir"), "calcalories", action])
+        Quickshell.execDetached([Quickshell.shellPath("scripts/inir"), "calcorie", action])
     }
 
     onClicked: mouse => {
@@ -125,7 +125,7 @@ MouseArea {
     StyledToolTip {
         extraVisibleCondition: root.containsMouse
         text: root.over
-            ? Translation.tr("Cal-O-Matic — %1 kcal over. Click for the log; right-click AI; middle-click water.").arg(root.amount)
-            : Translation.tr("Cal-O-Matic — %1 kcal left. Click for the log; right-click AI; middle-click water.").arg(root.amount)
+            ? Translation.tr("Calcorie — %1 kcal over. Click for the log; right-click AI; middle-click water.").arg(root.amount)
+            : Translation.tr("Calcorie — %1 kcal left. Click for the log; right-click AI; middle-click water.").arg(root.amount)
     }
 }

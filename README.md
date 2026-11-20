@@ -1,9 +1,9 @@
-# Cal-O-Matic
+# Calcorie
 
 A pastel pixel calorie widget for [iNiR](https://github.com/snowarch/iNiR)'s Material desktop. A cream sticker with a
 cranky carrot, a segmented fuel bar and a proper little console behind it.
 
-![Cal-O-Matic on the desktop](preview.png)
+![Calcorie on the desktop](preview.png)
 
 Built and tested on **iNiR 3.1.0**, Material family, 1707 × 1067 logical / 1.5 scale.
 
@@ -62,17 +62,17 @@ The top bar also carries a tiny carrot and the remaining calories. Left-click th
 IPC, if you want a keybind:
 
 ```sh
-inir calcalories toggle
-inir calcalories open
-inir calcalories ai
-inir calcalories water
-inir calcalories waterAdd
-inir calcalories waterTest
-inir calcalories budget
-inir calcalories add "Banana" 105
-inir calcalories bar true   # put the carrot chip in the top bar
-inir calcalories reset
-inir calcalories defaults   # empty log, neutral example profile, 2,200 kcal
+inir calcorie toggle
+inir calcorie open
+inir calcorie ai
+inir calcorie water
+inir calcorie waterAdd
+inir calcorie waterTest
+inir calcorie budget
+inir calcorie add "Banana" 105
+inir calcorie bar true   # put the carrot chip in the top bar
+inir calcorie reset
+inir calcorie defaults   # empty log, neutral example profile, 2,200 kcal
 ```
 
 ## Install
@@ -90,6 +90,10 @@ inir background focusWidget custom.calcalories false
 
 `install-bar.sh` adds the bar chip to the installed Material (`ii`) bar. That registry lives in iNiR's plugin, so the script patches `BarContent.qml`, the config schema and the bar module editor, keeping `*.bak-calcalories` backups. Re-run it after an iNiR update if the chip disappears, then restart the shell.
 
+The installed widget id is still `calcalories` (folder and `custom.calcalories` config key), and the old `inir calcalories`
+command still works. That keeps existing logs, the keyring entry and the bar patch intact across the rename. New scripts
+should use `inir calcorie`.
+
 Then drag it where you want it in edit mode (`Super+W` opens widget edit mode on this setup). Scaling uses the normal
 desktop-widget scale control.
 
@@ -106,8 +110,8 @@ The widget writes the calorie log and water state under `background.widgets.cust
 per-output override) in `~/.config/inir/config.json`: `targetKcal`, `profileJson`, `entriesJson`, `logDay`,
 `waterGlasses`, `waterGoal`, `waterReminder`, `waterIntervalMin`, `waterLastReminder` and `waterDay`.
 
-The DeepSeek key is kept in iNiR's system-keyring entry (key id `calcalories-deepseek`) or read from
-`DEEPSEEK_API_KEY`. It is never written to widget settings. A meal description leaves the machine only when you press
+The DeepSeek key is kept in iNiR's system-keyring entry (key id `calcorie-deepseek`, falling back to the existing
+`calcalories-deepseek` entry) or read from `DEEPSEEK_API_KEY`. It is never written to widget settings. A meal description leaves the machine only when you press
 **Ask DeepSeek**; the request goes to `api.deepseek.com` and is not retried automatically.
 
 The profile is a generic starting point, not a guess about you: neutral, 30 years, 175 cm, 70 kg, light activity,

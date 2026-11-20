@@ -259,7 +259,7 @@ AbstractBackgroundWidget {
         const left = Math.max(0, root.waterGoal - root.waterGlasses)
         const body = root.waterGlasses + " of " + root.waterGoal + " glasses today"
             + (left > 0 ? " — " + left + " to go." : ".")
-        Quickshell.execDetached(["notify-send", "-a", "Cal-O-Matic",
+        Quickshell.execDetached(["notify-send", "-a", "Calcorie",
             "-i", "dialog-information", "Water break", body])
         if (!test) {
             root.waterLastReminder = Date.now()
@@ -407,7 +407,7 @@ AbstractBackgroundWidget {
                 anchors.verticalCenter: parent.verticalCenter
             }
             Text {
-                text: "CAL-O-MATIC"
+                text: "CALCORIE"
                 color: Pal.ink
                 font.family: "Silkscreen"
                 font.pixelSize: Math.round(14 * root.d)
@@ -732,6 +732,24 @@ AbstractBackgroundWidget {
     /// Start today with an empty log.
     IpcHandler {
         target: "calcalories"
+        function open(): void { root.openPanel(0) }
+        function budget(): void { root.openPanel(2) }
+        function ai(): void { root.openPanel(1) }
+        function water(): void { root.openPanel(3) }
+        function waterAdd(): void { root.addWater() }
+        function waterTest(): void { root.sendWaterNotification(true) }
+        function close(): void { root.panelOpen = false }
+        function toggle(): void { root.panelOpen = !root.panelOpen }
+        function add(name: string, kcal: int): void { root.addEntry(name, kcal) }
+        function reset(): void { root.resetDay() }
+        function defaults(): void { root.resetAll() }
+        function bar(enabled: bool): string { return root.setBarPill(enabled) }
+    }
+
+    // New name, same widget. Keep the original target so existing keybinds,
+    // scripts and the installed folder continue to work.
+    IpcHandler {
+        target: "calcorie"
         function open(): void { root.openPanel(0) }
         function budget(): void { root.openPanel(2) }
         function ai(): void { root.openPanel(1) }

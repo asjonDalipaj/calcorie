@@ -1,9 +1,9 @@
 {
-  "name": "Cal-O-Matic",
-  "icon": "local_fire_department",
-  "version": "1.4.1",
+  "name": "Calcorie",
+  "icon": "nutrition",
+  "version": "1.5.0",
   "author": "aj",
-  "description": "A pastel pixel calorie counter with a carrot who reacts to your day. Open the card to log food, ask DeepSeek for a meal estimate, or calculate a daily budget from your body.",
+  "description": "A pastel pixel calorie and water counter with a carrot who reacts to your day. Log food, ask DeepSeek for a meal estimate, plan a budget, and get gentle water nudges.",
   "category": "health",
   "main": "Calcalories.qml",
   "defaultConfig": {
@@ -23,7 +23,13 @@
     "targetKcal": 2200,
     "profileJson": "",
     "entriesJson": "[]",
-    "logDay": ""
+    "logDay": "",
+    "waterGlasses": 0,
+    "waterGoal": 8,
+    "waterReminder": true,
+    "waterIntervalMin": 60,
+    "waterLastReminder": 0,
+    "waterDay": ""
   },
   "configKeys": {
     "targetKcal": {

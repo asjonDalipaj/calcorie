@@ -23,7 +23,7 @@ PanelWindow {
     anchors { top: true; bottom: true; left: true; right: true }
     exclusionMode: ExclusionMode.Ignore
     WlrLayershell.layer: WlrLayer.Overlay
-    WlrLayershell.namespace: "quickshell:calcalories"
+    WlrLayershell.namespace: "quickshell:calcorie"
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
 
     FontLoader { id: silk; source: "fonts/Silkscreen-Regular.ttf" }
@@ -332,7 +332,7 @@ PanelWindow {
         Text {
             x: Math.round(20 * panel.d)
             y: Math.round(18 * panel.d)
-            text: "CAL-O-MATIC"
+            text: "CALCORIE"
             color: Pal.ink
             font.family: "Silkscreen"
             font.pixelSize: Math.round(18 * panel.d)

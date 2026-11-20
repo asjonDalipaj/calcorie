@@ -1,4 +1,4 @@
-# Cal-O-Matic
+# Calcorie
 
 A pastel pixel calorie widget for iNiR / Material. The card sits on the desktop; click it to open the console. The
 console uses 16 px fields and a 13–14 px minimum for labels, with a 680×660 panel so the type can breathe.
@@ -14,7 +14,8 @@ console uses 16 px fields and a 13–14 px minimum for labels, with a 680×660 p
 
 ## Install
 
-Copy this folder to `~/.config/inir/widgets/calcalories`, then:
+The installed folder and config key keep the original `calcalories` id so existing data survives; `inir calcorie` is
+the new command alias. To install, copy this folder to `~/.config/inir/widgets/calcalories`, then:
 
 ```sh
 inir custom-widgets reload
@@ -27,21 +28,21 @@ Click the card to open the console. In edit mode the card drags and scales like 
 middle-click opens Water.
 
 For the AI estimate, paste a DeepSeek key in **AI estimate** once; it is stored in the system keyring (key id
-`calcalories-deepseek`). You can also set `DEEPSEEK_API_KEY` in the iNiR environment. The key is never written to
+`calcorie-deepseek`, falling back to the existing `calcalories-deepseek`). You can also set `DEEPSEEK_API_KEY` in the iNiR environment. The key is never written to
 widget settings. Use **KEY** in the ask row to replace a stored key. If your iNiR AI privacy policy is set to
 local-only, the AI tab says so and does not call out.
 
 ## IPC
 
 ```sh
-inir calcalories toggle
-inir calcalories ai
-inir calcalories water
-inir calcalories waterAdd
-inir calcalories waterTest
-inir calcalories add "Banana" 105
-inir calcalories reset
-inir calcalories defaults   # empty log, neutral example profile, 2,200 kcal
+inir calcorie toggle
+inir calcorie ai
+inir calcorie water
+inir calcorie waterAdd
+inir calcorie waterTest
+inir calcorie add "Banana" 105
+inir calcorie reset
+inir calcorie defaults   # empty log, neutral example profile, 2,200 kcal
 ```
 
 ## Privacy

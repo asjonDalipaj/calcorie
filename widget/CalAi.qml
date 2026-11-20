@@ -47,7 +47,7 @@ Item {
 
     function _readKey(): void {
         const keys = KeyringStorage.keyringData?.apiKeys ?? {}
-        const own = String(keys["calcalories-deepseek"] ?? "").trim()
+        const own = String(keys["calcorie-deepseek"] ?? keys["calcalories-deepseek"] ?? "").trim()
         const shared = String(keys["deepseek"] ?? "").trim()
         root._storedKey = own.length > 0 ? own : shared
         root.keySource = own.length > 0 ? "widget keyring"
@@ -68,7 +68,7 @@ Item {
             root.refreshKey()
             return false
         }
-        KeyringStorage.setNestedField(["apiKeys", "calcalories-deepseek"], key)
+        KeyringStorage.setNestedField(["apiKeys", "calcorie-deepseek"], key)
         root._storedKey = key
         root.keySource = "widget keyring"
         root.error = ""
